@@ -8,8 +8,9 @@ public class Venta {
     protected double total;
     protected int idUsuario;
     protected Fecha fechaVenta;
-    protected ArrayList<Integer> idProductos;
-    protected ArrayList<Integer> cantidades;
+    protected ArrayList<Integer> idProductos;//Para registrar varios productos en una sola venta
+    protected ArrayList<Integer> cantidades;//La cantidad de piezas que pide el cliente para cada helado
+    
 
     public Venta(int idVenta, double total, int idUsuario, int idProducto) {
         this.idVenta = idVenta;
