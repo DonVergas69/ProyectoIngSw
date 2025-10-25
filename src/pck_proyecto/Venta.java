@@ -1,19 +1,22 @@
 package pck_proyecto;
 
+import java.util.ArrayList;
 import pck_fecha.Fecha;
 
 public class Venta {
     protected int idVenta;
     protected double total;
     protected int idUsuario;
-    protected int idProducto;
     protected Fecha fechaVenta;
+    protected ArrayList<Integer> idProductos;
+    protected ArrayList<Integer> cantidades;
 
     public Venta(int idVenta, double total, int idUsuario, int idProducto) {
         this.idVenta = idVenta;
         this.total = total;
         this.idUsuario = idUsuario;
-        this.idProducto = idProducto;
+        idProductos = new ArrayList<>();
+        cantidades  = new ArrayList<>();
     }
     
     public Venta(){
@@ -42,14 +45,6 @@ public class Venta {
 
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
-    }
-
-    public int getIdProducto() {
-        return idProducto;
-    }
-
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
     }
 
     public String getFechaVenta() {
