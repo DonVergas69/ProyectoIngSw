@@ -8,8 +8,8 @@ public class Venta {
     protected double total;
     protected int idUsuario;
     protected Fecha fechaVenta;
-    protected ArrayList<Integer> idProductos;
-    protected ArrayList<Integer> cantidades;
+    protected ArrayList<Integer> idProductos;//
+    protected ArrayList<Integer> cantidades;//
 
     public Venta(int idVenta, double total, int idUsuario, int idProducto) {
         this.idVenta = idVenta;
