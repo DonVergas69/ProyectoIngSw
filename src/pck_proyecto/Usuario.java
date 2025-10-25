@@ -13,6 +13,7 @@ public class Usuario {
     protected String nombre;
     protected String rol;
     protected String contrasena;
+    protected String wololaa;
 
     public Usuario(int idUsuario, String nombre, String rol, String contrasena) {
         this.idUsuario = idUsuario;
