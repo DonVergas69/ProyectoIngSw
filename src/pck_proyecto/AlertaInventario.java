@@ -7,6 +7,7 @@ public class AlertaInventario {
     protected Fecha fechaAlerta;
     protected String tipoAlerta;
     protected int idProducto;
+    //Lo que sea
 
     public AlertaInventario(int idAlerta, Fecha fechaAlerta, String tipoAlerta, int idProducto) {
         this.idAlerta = idAlerta;
