@@ -24,7 +24,7 @@ public class Conexion_bd {
             con = DriverManager.getConnection(url,user,password);
             JOptionPane.showMessageDialog(null,"Se establecio la conexion con el servidor","Todo bien",JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException e){
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null,"no se pudo establecer la conexion con la base de datos","Error",JOptionPane.ERROR_MESSAGE);
         }catch(ClassNotFoundException e){
             JOptionPane.showMessageDialog(null,"no se encontro el driver","Error",JOptionPane.ERROR_MESSAGE);
         }
