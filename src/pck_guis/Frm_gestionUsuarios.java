@@ -41,12 +41,12 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
         btn_gestionUsuarios = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btn_agregarUsuario = new javax.swing.JButton();
+        btn_modificarUsuario = new javax.swing.JButton();
+        btn_eliminarUsuario = new javax.swing.JButton();
+        btn__icon_agregarUsuario = new javax.swing.JButton();
+        btn_icon_modificarUsuario = new javax.swing.JButton();
+        btn_icon_eliminarUsuario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(196, 196, 196));
@@ -186,42 +186,42 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tw Cen MT", 0, 48)); // NOI18N
         jLabel2.setText("Gestión de usuarios");
 
-        jButton4.setBackground(new java.awt.Color(204, 255, 204));
-        jButton4.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 204, 0));
-        jButton4.setText("Alta de usuario");
-        jButton4.setBorder(null);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btn_agregarUsuario.setBackground(new java.awt.Color(204, 255, 204));
+        btn_agregarUsuario.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        btn_agregarUsuario.setForeground(new java.awt.Color(0, 204, 0));
+        btn_agregarUsuario.setText("Alta de usuario");
+        btn_agregarUsuario.setBorder(null);
+        btn_agregarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btn_agregarUsuarioActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 204));
-        jButton5.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(204, 204, 0));
-        jButton5.setText("Modificar usuario");
-        jButton5.setBorder(null);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btn_modificarUsuario.setBackground(new java.awt.Color(255, 255, 204));
+        btn_modificarUsuario.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        btn_modificarUsuario.setForeground(new java.awt.Color(204, 204, 0));
+        btn_modificarUsuario.setText("Modificar usuario");
+        btn_modificarUsuario.setBorder(null);
+        btn_modificarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btn_modificarUsuarioActionPerformed(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(255, 204, 204));
-        jButton6.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 0, 0));
-        jButton6.setText("Eliminar usuario");
-        jButton6.setBorder(null);
+        btn_eliminarUsuario.setBackground(new java.awt.Color(255, 204, 204));
+        btn_eliminarUsuario.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        btn_eliminarUsuario.setForeground(new java.awt.Color(255, 0, 0));
+        btn_eliminarUsuario.setText("Eliminar usuario");
+        btn_eliminarUsuario.setBorder(null);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_pictures/icon_agregarUsuario.png"))); // NOI18N
-        jButton1.setContentAreaFilled(false);
+        btn__icon_agregarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_pictures/icon_agregarUsuario.png"))); // NOI18N
+        btn__icon_agregarUsuario.setContentAreaFilled(false);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_pictures/icono_modificarUsuario.png"))); // NOI18N
-        jButton2.setContentAreaFilled(false);
+        btn_icon_modificarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_pictures/icono_modificarUsuario.png"))); // NOI18N
+        btn_icon_modificarUsuario.setContentAreaFilled(false);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_pictures/icono_eliminarUsuario.png"))); // NOI18N
-        jButton3.setContentAreaFilled(false);
+        btn_icon_eliminarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_pictures/icono_eliminarUsuario.png"))); // NOI18N
+        btn_icon_eliminarUsuario.setContentAreaFilled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -241,14 +241,14 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))
+                            .addComponent(btn__icon_agregarUsuario)
+                            .addComponent(btn_icon_modificarUsuario)
+                            .addComponent(btn_icon_eliminarUsuario))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn_modificarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_agregarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_eliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(112, 112, 112))))
         );
         layout.setVerticalGroup(
@@ -259,23 +259,23 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(btn__icon_agregarUsuario)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_agregarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(jButton2))
+                        .addComponent(btn_icon_modificarUsuario))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_modificarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
+                    .addComponent(btn_icon_eliminarUsuario)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_eliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -283,13 +283,13 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btn_agregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btn_agregarUsuarioActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btn_modificarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btn_modificarUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -327,20 +327,20 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn__icon_agregarUsuario;
+    private javax.swing.JButton btn_agregarUsuario;
+    private javax.swing.JButton btn_eliminarUsuario;
     private javax.swing.JButton btn_fotoPerfil;
     private javax.swing.JButton btn_gestionUsuarios;
     private javax.swing.JButton btn_horarios;
+    private javax.swing.JButton btn_icon_eliminarUsuario;
+    private javax.swing.JButton btn_icon_modificarUsuario;
     private javax.swing.JButton btn_inventario;
     private javax.swing.JButton btn_menu;
+    private javax.swing.JButton btn_modificarUsuario;
     private javax.swing.JButton btn_regVentas;
     private javax.swing.JButton btn_salir;
     private javax.swing.JButton btn_ventaHelado;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
