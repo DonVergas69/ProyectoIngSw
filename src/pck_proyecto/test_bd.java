@@ -9,7 +9,6 @@ package pck_proyecto;
  * @author User
  */
 import java.util.ArrayList;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.*;
 public class test_bd extends javax.swing.JFrame {
@@ -49,7 +48,7 @@ public class test_bd extends javax.swing.JFrame {
     String nombre;
     String sabor;
     float precio;
-    boolean valid_modificar= false;
+    int flaj_tabla=0;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -287,14 +286,14 @@ public class test_bd extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
-            valid_modificar= true;
+            flaj_tabla=1;
             ta_avisos.setText("de doble click sobre el producto a modificar");
             display_productos();
     }//GEN-LAST:event_btn_modificarActionPerformed
 
     private void Tabla_datos_productosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tabla_datos_productosMouseClicked
         boolean valid;
-        if(valid_modificar == true){
+        if(flaj_tabla == 1){
             if(evt.getClickCount() == 2){
                 int filaSelec = Tabla_datos_productos.rowAtPoint(evt.getPoint());
                 id_producto = Integer.parseInt(Tabla_datos_productos.getValueAt(filaSelec,0).toString());
@@ -306,7 +305,24 @@ public class test_bd extends javax.swing.JFrame {
                 if(valid == false){
                     JOptionPane.showMessageDialog(null,"Se realizaron los cambios con exito","Todo bien",-1);
                     ta_avisos.setText(" ");
-                    valid_modificar = false;
+                    flaj_tabla = 0;
+                    display_productos();
+                }else{
+                    JOptionPane.showMessageDialog(null,"No se pudieron realizar los cambios","Error",0);
+                }
+            }
+        }
+        
+        if(flaj_tabla == 2){
+            if(evt.getClickCount() == 2){
+                int filaSelec = Tabla_datos_productos.rowAtPoint(evt.getPoint());
+                id_producto = Integer.parseInt(Tabla_datos_productos.getValueAt(filaSelec,0).toString());
+                Producto produc = new Producto();
+                valid = produc.eliminar_dato(id_producto);
+                if(valid == false){
+                    JOptionPane.showMessageDialog(null,"Se borro el dato con exito","Todo bien",-1);
+                    ta_avisos.setText(" ");
+                    flaj_tabla = 0;
                     display_productos();
                 }else{
                     JOptionPane.showMessageDialog(null,"No se pudieron realizar los cambios","Error",0);
@@ -316,7 +332,9 @@ public class test_bd extends javax.swing.JFrame {
     }//GEN-LAST:event_Tabla_datos_productosMouseClicked
 
     private void btn_borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrarActionPerformed
-        // TODO add your handling code here:
+        flaj_tabla=2;
+        ta_avisos.setText("de doble click sobre el producto a borrar");
+        display_productos();
     }//GEN-LAST:event_btn_borrarActionPerformed
     
     /**
