@@ -318,14 +318,20 @@ public class test_bd extends javax.swing.JFrame {
                 int filaSelec = Tabla_datos_productos.rowAtPoint(evt.getPoint());
                 id_producto = Integer.parseInt(Tabla_datos_productos.getValueAt(filaSelec,0).toString());
                 Producto produc = new Producto();
+                int option = JOptionPane.showConfirmDialog(null,"Esta seguro de eliminar el dato en el ID: " + id_producto);
+                if(option == 0){
                 valid = produc.eliminar_dato(id_producto);
                 if(valid == false){
                     JOptionPane.showMessageDialog(null,"Se borro el dato con exito","Todo bien",-1);
                     ta_avisos.setText(" ");
                     flaj_tabla = 0;
                     display_productos();
+                    
                 }else{
                     JOptionPane.showMessageDialog(null,"No se pudieron realizar los cambios","Error",0);
+                }
+                }else{
+                        JOptionPane.showMessageDialog(null,"Operacion cancelada","Atencion",1);
                 }
             }
         }
