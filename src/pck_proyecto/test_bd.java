@@ -41,7 +41,7 @@ public class test_bd extends javax.swing.JFrame {
                 obj_dat[0] = Integer.toString(datos.get(i).getIdProducto());
                 obj_dat[1] = datos.get(i).getNombre();
                 obj_dat[2] = datos.get(i).getSabor();
-                obj_dat[3] = Float.toString(datos.get(i).precio);
+                obj_dat[3] = Float.toString(datos.get(i).getPrecio());
                 model.addRow(obj_dat);
             }
     }
