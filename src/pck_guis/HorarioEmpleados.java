@@ -11,6 +11,9 @@ package pck_guis;
 public class HorarioEmpleados extends javax.swing.JFrame {
 
     /**
+     * 
+     * l
+     * 
      * Creates new form HorarioEmpleados
      */
     public HorarioEmpleados() {
