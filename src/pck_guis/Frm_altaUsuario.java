@@ -4,17 +4,23 @@
  */
 package pck_guis;
 
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import pck_proyecto.Usuario;
+
 /**
  *
  * @author lenovo
  */
 public class Frm_altaUsuario extends javax.swing.JFrame {
-
+    ArrayList<Usuario> usuarios;
     /**
      * Creates new form Frm_altaUsuario
      */
     public Frm_altaUsuario() {
         initComponents();
+        usuarios = new ArrayList<>();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -114,6 +120,11 @@ public class Frm_altaUsuario extends javax.swing.JFrame {
         btn_agregarUsuario.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
         btn_agregarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btn_agregarUsuario.setText("Registrar");
+        btn_agregarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agregarUsuarioActionPerformed(evt);
+            }
+        });
 
         btn_cancelar.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
         btn_cancelar.setText("Cancelar");
@@ -221,9 +232,70 @@ public class Frm_altaUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void agregarUsuario(){
+        int idUsuario = 0;
+        String nombre = null, contrasena = null, confirmContrasena = null, puesto = null;
+        boolean valido = true;
+        
+        try{
+            idUsuario = Integer.parseInt(ct_idUsuario.getText());
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "El ID debe ser numerico.","Error de entrada",2);
+            ct_idUsuario.setText("");
+            ct_idUsuario.requestFocus();
+            valido = false;
+        }
+        
+        for(Usuario u : usuarios){
+            if(idUsuario == u.getIdUsuario()){
+                JOptionPane.showMessageDialog(null,"El ID ya está en uso.","Error de entrada.",2);
+                ct_idUsuario.setText("");
+                ct_idUsuario.requestFocus();
+                valido = false;
+            }
+        }
+        
+        nombre = ct_nombre.getText();
+        
+        if(!nombre.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$")){
+            JOptionPane.showMessageDialog(null,"Ingrese un nombre válido.","Error de entrada",0);
+            ct_nombre.setText("");
+            ct_nombre.requestFocus();
+            valido = false;
+        }
+        
+        if(cmb_puesto.getSelectedIndex()==-1){
+            JOptionPane.showMessageDialog(null,"Debe seleccionar un Rol/Puesto.","Error de entrada",2);
+            valido = false;
+        }else{
+            puesto = cmb_puesto.getSelectedItem().toString();
+        }
+        
+        contrasena = ct_contrasena.getText();
+//        if(contrasena.matches()){
+//            JOptionPane.showMessageDialog(null,"Ingrese una contrasena válida.","Error de entrada",0);
+//            ct_contrasena.setText("");
+//            ct_contrasena.requestFocus();
+//            valido = false;
+//        }
+        
+        confirmContrasena = ct_confirmContrasena.getText();
+        if(confirmContrasena.isBlank()){
+            JOptionPane.showMessageDialog(null,"Las contrasenas no coinciden.","Error de entrada",0);
+            ct_confirmContrasena.setText("");
+            ct_confirmContrasena.requestFocus();
+            valido = false;
+        }
+        
+    }
+    
     private void ct_contrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ct_contrasenaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ct_contrasenaActionPerformed
+
+    private void btn_agregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarUsuarioActionPerformed
+        this.agregarUsuario();
+    }//GEN-LAST:event_btn_agregarUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
