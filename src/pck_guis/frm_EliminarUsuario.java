@@ -83,7 +83,7 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(33, 103, 174));
 
-        jLabel3.setFont(new java.awt.Font("Georgia", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Heladeria Gelato Felice");
 
@@ -184,6 +184,8 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
             }
         });
 
+        ctEncontrado.setBackground(new java.awt.Color(204, 204, 204));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -273,7 +275,7 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();

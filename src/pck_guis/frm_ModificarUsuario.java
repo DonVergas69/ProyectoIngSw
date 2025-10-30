@@ -191,8 +191,14 @@ public class frm_ModificarUsuario extends javax.swing.JFrame {
         btModificar.setBackground(new java.awt.Color(153, 255, 153));
         btModificar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         btModificar.setText("Modificar ");
+        btModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btModificarActionPerformed(evt);
+            }
+        });
 
         ctEncontrado.setEditable(false);
+        ctEncontrado.setBackground(new java.awt.Color(204, 204, 204));
         ctEncontrado.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         ctEncontrado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -323,6 +329,10 @@ public class frm_ModificarUsuario extends javax.swing.JFrame {
     private void ctEncontradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ctEncontradoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ctEncontradoActionPerformed
+
+    private void btModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btModificarActionPerformed
 
     /**
      * @param args the command line arguments
