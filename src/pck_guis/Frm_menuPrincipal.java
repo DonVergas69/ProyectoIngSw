@@ -4,6 +4,8 @@
  */
 package pck_guis;
 
+import pck_proyecto.test_bd;
+
 /**
  *
  * @author lenovo
@@ -131,6 +133,11 @@ public class Frm_menuPrincipal extends javax.swing.JFrame {
         btn_inventario.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
         btn_inventario.setForeground(new java.awt.Color(255, 255, 255));
         btn_inventario.setText("Inventario");
+        btn_inventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_inventarioActionPerformed(evt);
+            }
+        });
 
         btn_regVentas.setBackground(new java.awt.Color(97, 101, 146));
         btn_regVentas.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
@@ -248,6 +255,12 @@ public class Frm_menuPrincipal extends javax.swing.JFrame {
         ventana.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_fotoPerfilActionPerformed
+
+    private void btn_inventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inventarioActionPerformed
+        test_bd ventana = new test_bd();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_inventarioActionPerformed
 
     /**
      * @param args the command line arguments

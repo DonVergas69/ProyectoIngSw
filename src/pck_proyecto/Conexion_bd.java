@@ -13,9 +13,9 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 public class Conexion_bd {
     
-    static String url = "jdbc:mysql://localhost:3306/bd_heladeria";
-    static String user = "root";
-    static String password = "planZ/99";
+    private static String url = "jdbc:mysql://localhost:3306/bd_heladeria";
+    private static String user = "root";
+    private static String password = "planZ/99";
     private static Connection con=null;
     
     public static Connection getConection(){
