@@ -81,6 +81,8 @@ public class Producto {
             e.printStackTrace();
         }
     }
+    
+    
     public static ArrayList <Producto> Consultar_tablaProductos(){
         Connection con = Conexion_bd.getConection();
         String consulta = "SELECT * FROM productos";

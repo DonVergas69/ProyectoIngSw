@@ -84,28 +84,24 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="Txf_nombre_busqueda" min="-2" pref="157" max="-2" attributes="0"/>
-                              <EmptySpace pref="54" max="32767" attributes="0"/>
-                              <Component id="btn_consultar2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="Txf_nombre_busqueda" min="-2" pref="157" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace pref="138" max="32767" attributes="0"/>
                       <Component id="lb_resultado" min="-2" pref="737" max="-2" attributes="0"/>
                       <EmptySpace pref="12" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lb_consult" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="Txf_Id_busqueda" min="-2" pref="158" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                              <Component id="btn_consul_id" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btn_consultar2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_consul_id" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Component id="lb_consult" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btn_cancelar" min="-2" max="-2" attributes="0"/>
@@ -215,7 +211,7 @@
                           <Component id="Txf_nombre_busqueda" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="btn_consultar2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -256,16 +252,25 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="nombre:"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comfortaa" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nombre:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comfortaa" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Sabor:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comfortaa" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Precio:"/>
       </Properties>
     </Component>
@@ -325,7 +330,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="btn_consultar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="consultar base de datos"/>
+        <Property name="text" type="java.lang.String" value="Consultar base de datos"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_consultarActionPerformed"/>
@@ -364,6 +369,9 @@
     </Container>
     <Component class="javax.swing.JLabel" name="lb_consult">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comfortaa" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Consulta por ID: "/>
       </Properties>
     </Component>
@@ -373,7 +381,7 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="btn_consul_id">
       <Properties>
-        <Property name="text" type="java.lang.String" value="consultar"/>
+        <Property name="text" type="java.lang.String" value="Consultar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_consul_idActionPerformed"/>
@@ -390,6 +398,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comfortaa" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Consulta por nombre:"/>
       </Properties>
     </Component>
@@ -397,7 +408,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btn_consultar2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="consultar"/>
+        <Property name="text" type="java.lang.String" value="Consultar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_consultar2ActionPerformed"/>

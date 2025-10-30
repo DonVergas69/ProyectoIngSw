@@ -1,26 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package pck_guis;
 
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
-import pck_proyecto.Usuario;
+import pck_modelo.Usuario_DB;
 
-/**
- *
- * @author lenovo
- */
 public class Frm_altaUsuario extends javax.swing.JFrame {
-    ArrayList<Usuario> usuarios;
+    private final Usuario_DB UDB;
     /**
      * Creates new form Frm_altaUsuario
      */
     public Frm_altaUsuario() {
         initComponents();
-        usuarios = new ArrayList<>();
         this.setLocationRelativeTo(null);
+        UDB = new Usuario_DB();
     }
 
     /**
@@ -53,6 +45,11 @@ public class Frm_altaUsuario extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(30, 89, 126));
 
@@ -128,6 +125,11 @@ public class Frm_altaUsuario extends javax.swing.JFrame {
 
         btn_cancelar.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
         btn_cancelar.setText("Cancelar");
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Comfortaa", 0, 12)); // NOI18N
         jLabel10.setText("Nombre(s), Ap. Paterno, Ap. Materno.");
@@ -233,26 +235,24 @@ public class Frm_altaUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void agregarUsuario(){
-        int idUsuario = 0;
+        int id = 0,res = 0;
         String nombre = null, contrasena = null, confirmContrasena = null, puesto = null;
         boolean valido = true;
         
         try{
-            idUsuario = Integer.parseInt(ct_idUsuario.getText());
+            id = Integer.parseInt(ct_idUsuario.getText());
         }catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(null, "El ID debe ser numerico.","Error de entrada",2);
+            JOptionPane.showMessageDialog(null,"Ingrese un ID numérico.","Error de entrada",2);
             ct_idUsuario.setText("");
             ct_idUsuario.requestFocus();
             valido = false;
         }
         
-        for(Usuario u : usuarios){
-            if(idUsuario == u.getIdUsuario()){
-                JOptionPane.showMessageDialog(null,"El ID ya está en uso.","Error de entrada.",2);
-                ct_idUsuario.setText("");
-                ct_idUsuario.requestFocus();
-                valido = false;
-            }
+        if(id<1){
+            JOptionPane.showMessageDialog(null,"Ingrese un ID positivo.","Error de entrada",2);
+            ct_idUsuario.setText("");
+            ct_idUsuario.requestFocus();
+            valido = false;
         }
         
         nombre = ct_nombre.getText();
@@ -264,29 +264,43 @@ public class Frm_altaUsuario extends javax.swing.JFrame {
             valido = false;
         }
         
+        
         if(cmb_puesto.getSelectedIndex()==-1){
-            JOptionPane.showMessageDialog(null,"Debe seleccionar un Rol/Puesto.","Error de entrada",2);
+            JOptionPane.showMessageDialog(null,"Debe seleccionar un puesto.","Error de entrada",2);
             valido = false;
         }else{
             puesto = cmb_puesto.getSelectedItem().toString();
         }
         
         contrasena = ct_contrasena.getText();
-//        if(contrasena.matches()){
-//            JOptionPane.showMessageDialog(null,"Ingrese una contrasena válida.","Error de entrada",0);
-//            ct_contrasena.setText("");
-//            ct_contrasena.requestFocus();
-//            valido = false;
-//        }
+        if(!contrasena.matches("^[a-zA-Z0-9]+$")){
+            JOptionPane.showMessageDialog(null,"Ingrese una contrasena válida.","Error de entrada",0);
+            ct_contrasena.setText("");
+            ct_contrasena.requestFocus();
+            valido = false;
+        }
         
         confirmContrasena = ct_confirmContrasena.getText();
-        if(confirmContrasena.isBlank()){
+        if(confirmContrasena.isBlank() || !contrasena.equals(confirmContrasena)){
             JOptionPane.showMessageDialog(null,"Las contrasenas no coinciden.","Error de entrada",0);
             ct_confirmContrasena.setText("");
             ct_confirmContrasena.requestFocus();
             valido = false;
         }
         
+        if(valido){
+            res = UDB.agregarUsuario(id,nombre,puesto,contrasena);
+            this.limpiar();
+        }
+    }
+    
+    private void limpiar(){
+        ct_idUsuario.setText("");
+        ct_idUsuario.requestFocus();
+        ct_nombre.setText("");
+        ct_contrasena.setText("");
+        ct_confirmContrasena.setText("");
+        cmb_puesto.setSelectedIndex(-1);
     }
     
     private void ct_contrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ct_contrasenaActionPerformed
@@ -296,6 +310,22 @@ public class Frm_altaUsuario extends javax.swing.JFrame {
     private void btn_agregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarUsuarioActionPerformed
         this.agregarUsuario();
     }//GEN-LAST:event_btn_agregarUsuarioActionPerformed
+
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
+        int res = 0;
+        
+        res = JOptionPane.showConfirmDialog(null,"Seguro que desea cancelar esta operación?","Cancelar",JOptionPane.YES_NO_OPTION);
+        
+        if(res == 0){
+            Frm_menuPrincipal ventana = new Frm_menuPrincipal();
+            ventana.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_btn_cancelarActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        this.limpiar();
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

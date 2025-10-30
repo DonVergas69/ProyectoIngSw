@@ -18,6 +18,7 @@ public class test_bd extends javax.swing.JFrame {
      */
     public test_bd() {
         initComponents();
+        this.setLocationRelativeTo(null);
  
     }
     
@@ -144,10 +145,13 @@ public class test_bd extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("nombre:");
+        jLabel2.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
+        jLabel2.setText("Nombre:");
 
+        jLabel3.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
         jLabel3.setText("Sabor:");
 
+        jLabel4.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
         jLabel4.setText("Precio:");
 
         btn_guardar.setText("Guardar\n");
@@ -172,7 +176,7 @@ public class test_bd extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Tabla_datos_productos);
 
-        btn_consultar.setText("consultar base de datos");
+        btn_consultar.setText("Consultar base de datos");
         btn_consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_consultarActionPerformed(evt);
@@ -197,9 +201,10 @@ public class test_bd extends javax.swing.JFrame {
         ta_avisos.setRows(5);
         jScrollPane2.setViewportView(ta_avisos);
 
+        lb_consult.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
         lb_consult.setText("Consulta por ID: ");
 
-        btn_consul_id.setText("consultar");
+        btn_consul_id.setText("Consultar");
         btn_consul_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_consul_idActionPerformed(evt);
@@ -214,9 +219,10 @@ public class test_bd extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
         jLabel1.setText("Consulta por nombre:");
 
-        btn_consultar2.setText("consultar");
+        btn_consultar2.setText("Consultar");
         btn_consultar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_consultar2ActionPerformed(evt);
@@ -232,23 +238,20 @@ public class test_bd extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(144, 144, 144))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Txf_nombre_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                                .addComponent(btn_consultar2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addComponent(jLabel1)
+                            .addComponent(Txf_nombre_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                         .addComponent(lb_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(12, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lb_consult)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Txf_Id_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(57, 57, 57)
-                                .addComponent(btn_consul_id))
-                            .addComponent(lb_consult))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_consultar2)
+                                    .addComponent(btn_consul_id))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_cancelar)
                         .addGap(163, 163, 163))))
@@ -332,7 +335,7 @@ public class test_bd extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Txf_nombre_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_consultar2))
-                        .addGap(0, 4, Short.MAX_VALUE)))
+                        .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 

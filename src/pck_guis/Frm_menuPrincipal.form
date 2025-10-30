@@ -126,6 +126,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Foto"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_fotoPerfilActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -235,6 +238,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Venta de helado"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ventaHeladoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_inventario">
           <Properties>
@@ -291,6 +297,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de usuarios"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_gestionUsuariosActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_salir">
           <Properties>
@@ -305,6 +314,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_salirActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
