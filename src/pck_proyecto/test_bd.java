@@ -77,6 +77,14 @@ public class test_bd extends javax.swing.JFrame {
         btn_borrar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         ta_avisos = new javax.swing.JTextArea();
+        lb_consult = new javax.swing.JLabel();
+        Txf_Id_busqueda = new javax.swing.JTextField();
+        lb_resultado = new javax.swing.JLabel();
+        btn_consul_id = new javax.swing.JToggleButton();
+        btn_cancelar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        Txf_nombre_busqueda = new javax.swing.JTextField();
+        btn_consultar2 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -189,11 +197,62 @@ public class test_bd extends javax.swing.JFrame {
         ta_avisos.setRows(5);
         jScrollPane2.setViewportView(ta_avisos);
 
+        lb_consult.setText("Consulta por ID: ");
+
+        btn_consul_id.setText("consultar");
+        btn_consul_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consul_idActionPerformed(evt);
+            }
+        });
+
+        btn_cancelar.setText("Cancelar operacion");
+        btn_cancelar.setEnabled(false);
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Consulta por nombre:");
+
+        btn_consultar2.setText("consultar");
+        btn_consultar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultar2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(144, 144, 144))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Txf_nombre_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                                .addComponent(btn_consultar2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(lb_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(12, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Txf_Id_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57)
+                                .addComponent(btn_consul_id))
+                            .addComponent(lb_consult))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_cancelar)
+                        .addGap(163, 163, 163))))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -212,17 +271,16 @@ public class test_bd extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btn_modificar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_consultar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_borrar)))
                 .addGap(24, 24, 24))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(175, 175, 175)
-                .addComponent(btn_modificar)
-                .addGap(43, 43, 43)
-                .addComponent(btn_consultar)
-                .addGap(40, 40, 40)
-                .addComponent(btn_borrar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,15 +303,37 @@ public class test_bd extends javax.swing.JFrame {
                         .addComponent(btn_guardar)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_modificar)
-                    .addComponent(btn_consultar)
-                    .addComponent(btn_borrar))
-                .addGap(35, 35, 35))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_borrar)
+                            .addComponent(btn_consultar)
+                            .addComponent(btn_modificar))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(lb_consult)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Txf_Id_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_consul_id)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(btn_cancelar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lb_resultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Txf_nombre_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_consultar2))
+                        .addGap(0, 4, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
@@ -282,12 +362,13 @@ public class test_bd extends javax.swing.JFrame {
         precio = Float.parseFloat(Txf_precio.getText());
         Producto product = new Producto(id_producto,nombre,sabor,precio);
         product.insertar_Producto();
-        
+        display_productos(); 
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
             flaj_tabla=1;
             ta_avisos.setText("de doble click sobre el producto a modificar");
+            btn_cancelar.setEnabled(true);
             display_productos();
     }//GEN-LAST:event_btn_modificarActionPerformed
 
@@ -340,8 +421,28 @@ public class test_bd extends javax.swing.JFrame {
     private void btn_borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrarActionPerformed
         flaj_tabla=2;
         ta_avisos.setText("de doble click sobre el producto a borrar");
+        btn_cancelar.setEnabled(true);
         display_productos();
     }//GEN-LAST:event_btn_borrarActionPerformed
+
+    private void btn_consul_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consul_idActionPerformed
+        int id = Integer.parseInt(Txf_Id_busqueda.getText());
+        Producto prod = new Producto();
+        prod.busqueda_id(id);
+    }//GEN-LAST:event_btn_consul_idActionPerformed
+
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
+        flaj_tabla = 0;
+        JOptionPane.showMessageDialog(null,"Operacion cancelada","atencion",-1);
+        ta_avisos.setText("");
+        btn_cancelar.setEnabled(false);
+    }//GEN-LAST:event_btn_cancelarActionPerformed
+
+    private void btn_consultar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultar2ActionPerformed
+        String nombre = Txf_nombre_busqueda.getText();
+        Producto prod = new Producto();
+        prod.busqueda_nombre(nombre);
+    }//GEN-LAST:event_btn_consultar2ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -380,14 +481,20 @@ public class test_bd extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabla_datos_productos;
+    private javax.swing.JTextField Txf_Id_busqueda;
     private javax.swing.JTextField Txf_nombre;
+    private javax.swing.JTextField Txf_nombre_busqueda;
     private javax.swing.JTextField Txf_precio;
     private javax.swing.JTextField Txf_sabor;
     private javax.swing.JButton btn_borrar;
+    private javax.swing.JButton btn_cancelar;
+    private javax.swing.JToggleButton btn_consul_id;
     private javax.swing.JButton btn_consultar;
+    private javax.swing.JButton btn_consultar2;
     private javax.swing.JButton btn_guardar;
     private javax.swing.JButton btn_modificar;
     private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -396,6 +503,8 @@ public class test_bd extends javax.swing.JFrame {
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lb_consult;
+    private javax.swing.JLabel lb_resultado;
     private javax.swing.JTextArea ta_avisos;
     // End of variables declaration//GEN-END:variables
 }
