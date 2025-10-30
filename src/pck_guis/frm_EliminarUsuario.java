@@ -79,7 +79,8 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
         ctEncontrado = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(730, 430));
+        setPreferredSize(new java.awt.Dimension(730, 530));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(33, 103, 174));
 
@@ -275,19 +276,29 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
-    ctID.setText(null);
-    ctNombre.setText(null);
-    ctSueldo.setText(null);
-    ctHorario.setText(null);
-    ctPuesto.setText(null);
-    ctID.requestFocus();
+        ctID.setText(null);
+        ctNombre.setText(null);
+        ctSueldo.setText(null);
+        ctHorario.setText(null);
+        ctPuesto.setText(null);
+        ctID.requestFocus();
+        
+        int res = 0;
+        
+        res = JOptionPane.showConfirmDialog(null,"¿Deseas cancelar esta operación?", "Cancelar", JOptionPane.YES_NO_OPTION);
+        
+        if(res == 0){
+            Frm_menuPrincipal ventana = new Frm_menuPrincipal();
+            ventana.setVisible(true);
+            this.dispose();
+        }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btCancelarActionPerformed

@@ -15,6 +15,7 @@ public class Frm_menuPrincipal extends javax.swing.JFrame {
      */
     public Frm_menuPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -57,6 +58,11 @@ public class Frm_menuPrincipal extends javax.swing.JFrame {
         lbl_rol.setText("[Empleado/Administrador]");
 
         btn_fotoPerfil.setText("Foto");
+        btn_fotoPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_fotoPerfilActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -115,6 +121,11 @@ public class Frm_menuPrincipal extends javax.swing.JFrame {
         btn_ventaHelado.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
         btn_ventaHelado.setForeground(new java.awt.Color(255, 255, 255));
         btn_ventaHelado.setText("Venta de helado");
+        btn_ventaHelado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ventaHeladoActionPerformed(evt);
+            }
+        });
 
         btn_inventario.setBackground(new java.awt.Color(97, 101, 146));
         btn_inventario.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
@@ -135,11 +146,21 @@ public class Frm_menuPrincipal extends javax.swing.JFrame {
         btn_gestionUsuarios.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
         btn_gestionUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         btn_gestionUsuarios.setText("Gestión de usuarios");
+        btn_gestionUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_gestionUsuariosActionPerformed(evt);
+            }
+        });
 
         btn_salir.setBackground(new java.awt.Color(97, 101, 146));
         btn_salir.setFont(new java.awt.Font("Tw Cen MT", 0, 48)); // NOI18N
         btn_salir.setForeground(new java.awt.Color(255, 255, 255));
         btn_salir.setText("Salir");
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -207,6 +228,26 @@ public class Frm_menuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_ventaHeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ventaHeladoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ventaHeladoActionPerformed
+
+    private void btn_gestionUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_gestionUsuariosActionPerformed
+        Frm_altaUsuario ventana = new Frm_altaUsuario();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_gestionUsuariosActionPerformed
+
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btn_salirActionPerformed
+
+    private void btn_fotoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fotoPerfilActionPerformed
+        frm_EliminarUsuario ventana = new frm_EliminarUsuario();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_fotoPerfilActionPerformed
 
     /**
      * @param args the command line arguments

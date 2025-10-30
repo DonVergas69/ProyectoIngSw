@@ -56,7 +56,7 @@ public class Frm_login extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(273, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(250, 250, 250))
         );
@@ -87,10 +87,10 @@ public class Frm_login extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_pictures/icon_llave.png"))); // NOI18N
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_pictures/icon_usuario.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_icons/icon_usuario.png"))); // NOI18N
         jLabel6.setPreferredSize(new java.awt.Dimension(40, 40));
 
-        btn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_pictures/icon_login.png"))); // NOI18N
+        btn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_icons/icon_login.png"))); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Comfortaa", 0, 14)); // NOI18N
         jLabel8.setText("Entrar");
@@ -152,7 +152,7 @@ public class Frm_login extends javax.swing.JFrame {
                         .addGap(18, 18, 18))))
         );
 
-        btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_pictures/icon_atras.png"))); // NOI18N
+        btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_icons/icon_atras.png"))); // NOI18N
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_salirActionPerformed(evt);
