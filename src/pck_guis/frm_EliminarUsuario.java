@@ -15,6 +15,7 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
    ArrayList<Usuario> listaUsuarios;
     public frm_EliminarUsuario() {
         initComponents();
+        this.setLocationRelativeTo(null);
     ctID.getDocument().addDocumentListener(new DocumentListener() {
         @Override
         public void insertUpdate(DocumentEvent e) {
@@ -302,7 +303,7 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
         res = JOptionPane.showConfirmDialog(null,"¿Deseas cancelar esta operación?", "Cancelar", JOptionPane.YES_NO_OPTION);
         
         if(res == 0){
-            Frm_menuPrincipal ventana = new Frm_menuPrincipal();
+            Frm_gestionUsuarios ventana = new Frm_gestionUsuarios();
             ventana.setVisible(true);
             this.dispose();
         }
