@@ -241,7 +241,7 @@ public class Frm_menuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ventaHeladoActionPerformed
 
     private void btn_gestionUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_gestionUsuariosActionPerformed
-        Frm_altaUsuario ventana = new Frm_altaUsuario();
+        Frm_gestionUsuarios ventana = new Frm_gestionUsuarios();
         ventana.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_gestionUsuariosActionPerformed
@@ -251,7 +251,7 @@ public class Frm_menuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_fotoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fotoPerfilActionPerformed
-        frm_EliminarUsuario ventana = new frm_EliminarUsuario();
+        Frm_login ventana = new Frm_login();
         ventana.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_fotoPerfilActionPerformed

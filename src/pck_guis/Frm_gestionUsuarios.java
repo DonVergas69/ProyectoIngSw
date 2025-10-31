@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package pck_guis;
 
-/**
- *
- * @author lenovo
- */
+import pck_proyecto.test_bd;
+
 public class Frm_gestionUsuarios extends javax.swing.JFrame {
 
     /**
@@ -47,9 +41,6 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
         btn__icon_agregarUsuario = new javax.swing.JButton();
         btn_icon_modificarUsuario = new javax.swing.JButton();
         btn_icon_eliminarUsuario = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(196, 196, 196));
@@ -66,13 +57,18 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
         lbl_rol.setText("[Empleado/Administrador]");
 
         btn_fotoPerfil.setText("Foto");
+        btn_fotoPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_fotoPerfilActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(360, Short.MAX_VALUE)
                 .addComponent(btn_fotoPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -129,6 +125,11 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
         btn_inventario.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
         btn_inventario.setForeground(new java.awt.Color(255, 255, 255));
         btn_inventario.setText("Inventario");
+        btn_inventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_inventarioActionPerformed(evt);
+            }
+        });
 
         btn_regVentas.setBackground(new java.awt.Color(97, 101, 146));
         btn_regVentas.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
@@ -149,6 +150,11 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
         btn_salir.setFont(new java.awt.Font("Tw Cen MT", 0, 48)); // NOI18N
         btn_salir.setForeground(new java.awt.Color(255, 255, 255));
         btn_salir.setText("Salir");
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -181,7 +187,7 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
                 .addComponent(btn_horarios, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_gestionUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45))
         );
@@ -216,24 +222,35 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
         btn_eliminarUsuario.setForeground(new java.awt.Color(255, 0, 0));
         btn_eliminarUsuario.setText("Eliminar usuario");
         btn_eliminarUsuario.setBorder(null);
+        btn_eliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliminarUsuarioActionPerformed(evt);
+            }
+        });
 
-        btn__icon_agregarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_pictures/icon_agregarUsuario.png"))); // NOI18N
+        btn__icon_agregarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_icons/icon_agregarUsuario.png"))); // NOI18N
         btn__icon_agregarUsuario.setContentAreaFilled(false);
+        btn__icon_agregarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn__icon_agregarUsuarioActionPerformed(evt);
+            }
+        });
 
-        btn_icon_modificarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_pictures/icono_modificarUsuario.png"))); // NOI18N
+        btn_icon_modificarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_icons/icono_modificarUsuario.png"))); // NOI18N
         btn_icon_modificarUsuario.setContentAreaFilled(false);
+        btn_icon_modificarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_icon_modificarUsuarioActionPerformed(evt);
+            }
+        });
 
-        btn_icon_eliminarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_pictures/icono_eliminarUsuario.png"))); // NOI18N
+        btn_icon_eliminarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_icons/icono_eliminarUsuario.png"))); // NOI18N
         btn_icon_eliminarUsuario.setContentAreaFilled(false);
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_icons/icon_agregarUsuario.png"))); // NOI18N
-        jButton1.setContentAreaFilled(false);
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_icons/icono_modificarUsuario.png"))); // NOI18N
-        jButton2.setContentAreaFilled(false);
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_icons/icono_eliminarUsuario.png"))); // NOI18N
-        jButton3.setContentAreaFilled(false);
+        btn_icon_eliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_icon_eliminarUsuarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -241,7 +258,7 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,29 +267,18 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel2)
                                 .addGap(183, 183, 183))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton3)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btn_icon_modificarUsuario))
-                                    .addComponent(btn_icon_eliminarUsuario)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btn__icon_agregarUsuario)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btn_modificarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btn_agregarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btn_eliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(112, 112, 112))))))
+                            .addComponent(btn_icon_modificarUsuario)
+                            .addComponent(btn__icon_agregarUsuario)
+                            .addComponent(btn_icon_eliminarUsuario))
+                        .addGap(34, 34, 34)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_modificarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_agregarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_eliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(79, 79, 79))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,34 +286,22 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(jLabel2)
-                .addGap(39, 39, 39)
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn__icon_agregarUsuario)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(btn_agregarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn__icon_agregarUsuario)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(btn_agregarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
-                                .addComponent(btn_icon_modificarUsuario))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(btn_modificarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addComponent(btn_eliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(165, 165, 165)
-                                .addComponent(btn_icon_eliminarUsuario))))
+                        .addComponent(btn_modificarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
+                        .addComponent(btn_eliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)))
+                        .addComponent(btn_icon_modificarUsuario)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_icon_eliminarUsuario)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -316,12 +310,56 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_agregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarUsuarioActionPerformed
-        // TODO add your handling code here:
+        Frm_altaUsuario ventana = new Frm_altaUsuario();
+        ventana.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_agregarUsuarioActionPerformed
 
     private void btn_modificarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarUsuarioActionPerformed
-        // TODO add your handling code here:
+        frm_ModificarUsuario ventana = new frm_ModificarUsuario();
+        ventana.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_modificarUsuarioActionPerformed
+
+    private void btn_eliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarUsuarioActionPerformed
+        frm_EliminarUsuario ventana = new frm_EliminarUsuario();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_eliminarUsuarioActionPerformed
+
+    private void btn__icon_agregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn__icon_agregarUsuarioActionPerformed
+        Frm_altaUsuario ventana = new Frm_altaUsuario();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn__icon_agregarUsuarioActionPerformed
+
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+            this.dispose();
+    }//GEN-LAST:event_btn_salirActionPerformed
+
+    private void btn_icon_modificarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_icon_modificarUsuarioActionPerformed
+        frm_ModificarUsuario ventana = new frm_ModificarUsuario();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_icon_modificarUsuarioActionPerformed
+
+    private void btn_icon_eliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_icon_eliminarUsuarioActionPerformed
+        frm_EliminarUsuario ventana = new frm_EliminarUsuario();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_icon_eliminarUsuarioActionPerformed
+
+    private void btn_inventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inventarioActionPerformed
+        test_bd ventana = new test_bd();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_inventarioActionPerformed
+
+    private void btn_fotoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fotoPerfilActionPerformed
+        Frm_login ventana = new Frm_login();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_fotoPerfilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -373,9 +411,6 @@ public class Frm_gestionUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton btn_regVentas;
     private javax.swing.JButton btn_salir;
     private javax.swing.JButton btn_ventaHelado;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -317,7 +317,7 @@ public class Frm_altaUsuario extends javax.swing.JFrame {
         res = JOptionPane.showConfirmDialog(null,"Seguro que desea cancelar esta operación?","Cancelar",JOptionPane.YES_NO_OPTION);
         
         if(res == 0){
-            Frm_menuPrincipal ventana = new Frm_menuPrincipal();
+            Frm_gestionUsuarios ventana = new Frm_gestionUsuarios();
             ventana.setVisible(true);
             this.dispose();
         }
