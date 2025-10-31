@@ -1,7 +1,6 @@
 package pck_proyecto;
 
 import java.util.ArrayList;
-import pck_fecha.Fecha;
 
 public class Venta {
     protected int idVenta;
