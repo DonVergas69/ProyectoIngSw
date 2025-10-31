@@ -20,11 +20,7 @@ public class Conexion_bd {
     
     public static Connection getConection(){
         
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(url,user,password);
-            //JOptionPane.showMessageDialog(null,"Se establecio la conexion con el servidor","Todo bien",JOptionPane.INFORMATION_MESSAGE);
-        Connection con=null;
+        
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(url,user,password);
