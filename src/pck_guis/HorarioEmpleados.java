@@ -6,6 +6,7 @@ package pck_guis;
 
 /**
  *
+ * 
  * @author AloneSimphony
  */
 public class HorarioEmpleados extends javax.swing.JFrame {
