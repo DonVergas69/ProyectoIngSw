@@ -5,21 +5,18 @@ import java.util.ArrayList;
 public class Venta {
     protected int idVenta;
     protected double total;
-    protected int idUsuario;
     protected Fecha fechaVenta;
-    protected ArrayList<Integer> idProductos;
-    protected ArrayList<Integer> cantidades;
+    protected int idProducto;
+    protected int cantidad;
 
-    public Venta(int idVenta, double total, int idUsuario, int idProducto) {
+    public Venta(int idVenta, double total, int idProducto) {
         this.idVenta = idVenta;
         this.total = total;
-        this.idUsuario = idUsuario;
-        idProductos = new ArrayList<>();
-        cantidades  = new ArrayList<>();
+        this.idProducto = idProducto;
     }
     
     public Venta(){
-        this(0,0.0,0,0);
+        this(0,0.0,0);
     }
 
     public int getIdVenta() {
@@ -36,14 +33,6 @@ public class Venta {
 
     public void setTotal(double total) {
         this.total = total;
-    }
-
-    public int getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
     }
 
     public String getFechaVenta() {

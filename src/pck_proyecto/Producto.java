@@ -81,6 +81,7 @@ public class Producto {
             e.printStackTrace();
         }
     }
+
     public static ArrayList <Producto> Consultar_tablaProductos(){
         Connection con = Conexion_bd.getConection();
         String consulta = "SELECT * FROM productos";
@@ -151,6 +152,8 @@ public class Producto {
             if(resultado.next()){
             JOptionPane.showMessageDialog(null,"ID: " +resultado.getInt(1) + " ,Nombre: " + resultado.getString(2) + 
                                           " ,Sabor: " + resultado.getString(3) + " ,Precio: " + resultado.getFloat(4),"Resultado",-1);
+            JOptionPane.showMessageDialog(null,"ID: " +resultado.getInt(1) + "\nNombre: " + resultado.getString(2) + 
+                                          "\nSabor: " + resultado.getString(3) + "\nPrecio: " + resultado.getFloat(4),"Resultado",-1);
             
             }else{
                 JOptionPane.showMessageDialog(null,"no se encontro el producto con ID" + id,"lo sentimos",0);
@@ -166,6 +169,10 @@ public class Producto {
             PreparedStatement st;
             st = con.prepareStatement(consulta);
             ResultSet resultado = st.executeQuery(consulta);
+            String consulta = "SELECT * from productos WHERE nombreProducto='" + nombre+"'";
+            PreparedStatement st;
+            st = con.prepareStatement(consulta);
+            ResultSet resultado = st.executeQuery();
             if(resultado.next()){
             JOptionPane.showMessageDialog(null,"ID: " +resultado.getInt(1) + " ,Nombre: " + resultado.getString(2) + 
                                           " ,Sabor: " + resultado.getString(3) + " ,Precio: " + resultado.getFloat(4),"Resultado",-1);

@@ -11,6 +11,7 @@ package pck_proyecto;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.*;
+import pck_guis.Frm_menuPrincipal;
 public class test_bd extends javax.swing.JFrame {
 
     /**
@@ -18,6 +19,7 @@ public class test_bd extends javax.swing.JFrame {
      */
     public test_bd() {
         initComponents();
+        this.setLocationRelativeTo(null);
  
     }
     
@@ -85,6 +87,7 @@ public class test_bd extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Txf_nombre_busqueda = new javax.swing.JTextField();
         btn_consultar2 = new javax.swing.JButton();
+        btn_atras = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,6 +151,15 @@ public class test_bd extends javax.swing.JFrame {
 
         jLabel3.setText("Sabor:");
 
+
+        jLabel2.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
+        jLabel2.setText("Nombre:");
+
+        jLabel3.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
+        jLabel3.setText("Sabor:");
+
+        jLabel4.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
+
         jLabel4.setText("Precio:");
 
         btn_guardar.setText("Guardar\n");
@@ -172,7 +184,11 @@ public class test_bd extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Tabla_datos_productos);
 
+
         btn_consultar.setText("consultar base de datos");
+
+        btn_consultar.setText("Consultar base de datos");
+
         btn_consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_consultarActionPerformed(evt);
@@ -200,6 +216,11 @@ public class test_bd extends javax.swing.JFrame {
         lb_consult.setText("Consulta por ID: ");
 
         btn_consul_id.setText("consultar");
+        lb_consult.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
+        lb_consult.setText("Consulta por ID: ");
+
+        btn_consul_id.setText("Consultar");
+
         btn_consul_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_consul_idActionPerformed(evt);
@@ -217,12 +238,25 @@ public class test_bd extends javax.swing.JFrame {
         jLabel1.setText("Consulta por nombre:");
 
         btn_consultar2.setText("consultar");
+        jLabel1.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
+        jLabel1.setText("Consulta por nombre:");
+
+        btn_consultar2.setText("Consultar");
         btn_consultar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_consultar2ActionPerformed(evt);
             }
         });
 
+        btn_atras.setBackground(new java.awt.Color(255, 0, 0));
+        btn_atras.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_atras.setForeground(new java.awt.Color(255, 255, 255));
+        btn_atras.setText("Atrás");
+        btn_atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_atrasActionPerformed(evt);
+            }
+        });
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -252,6 +286,25 @@ public class test_bd extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_cancelar)
                         .addGap(163, 163, 163))))
+                            .addComponent(lb_consult)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Txf_Id_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_consultar2)
+                                    .addComponent(btn_consul_id))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_cancelar)
+                        .addGap(41, 41, 41)
+                        .addComponent(btn_atras)
+                        .addGap(47, 47, 47))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(Txf_nombre_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lb_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -272,6 +325,7 @@ public class test_bd extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -323,6 +377,10 @@ public class test_bd extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addComponent(btn_cancelar)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_cancelar)
+                            .addComponent(btn_atras))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lb_resultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -333,6 +391,7 @@ public class test_bd extends javax.swing.JFrame {
                             .addComponent(Txf_nombre_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_consultar2))
                         .addGap(0, 4, Short.MAX_VALUE)))
+                        .addGap(0, 14, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -363,6 +422,7 @@ public class test_bd extends javax.swing.JFrame {
         Producto product = new Producto(id_producto,nombre,sabor,precio);
         product.insertar_Producto();
         display_productos(); 
+        display_productos();
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
@@ -443,6 +503,12 @@ public class test_bd extends javax.swing.JFrame {
         Producto prod = new Producto();
         prod.busqueda_nombre(nombre);
     }//GEN-LAST:event_btn_consultar2ActionPerformed
+
+    private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
+        Frm_menuPrincipal ventana = new Frm_menuPrincipal();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_atrasActionPerformed
     
     /**
      * @param args the command line arguments
@@ -486,6 +552,7 @@ public class test_bd extends javax.swing.JFrame {
     private javax.swing.JTextField Txf_nombre_busqueda;
     private javax.swing.JTextField Txf_precio;
     private javax.swing.JTextField Txf_sabor;
+    private javax.swing.JButton btn_atras;
     private javax.swing.JButton btn_borrar;
     private javax.swing.JButton btn_cancelar;
     private javax.swing.JToggleButton btn_consul_id;

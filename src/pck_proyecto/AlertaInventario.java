@@ -1,3 +1,4 @@
+//Lo que sea
 package pck_proyecto;
 import pck_fecha.Fecha;
 
