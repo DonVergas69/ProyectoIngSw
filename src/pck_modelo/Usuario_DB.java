@@ -8,11 +8,11 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.ResultSet;
 
 public class Usuario_DB {
-    private PreparedStatement PS;
+    private PreparedStatement PS = null;
     private final Conexion_bd CNX;
     private final String SQL_SELECT = "SELECT * FROM usuario";
-    private DefaultTableModel DTM;
-    private ResultSet RS;
+    private DefaultTableModel DTM = null;
+    private ResultSet RS = null;
     
     public Usuario_DB(){
         this.PS = null;
@@ -100,5 +100,36 @@ public class Usuario_DB {
         }
         
         return res;
+    }
+    
+    public boolean iniciarSesion(int id, String contrasena){
+        String SQL_LOGIN = null;
+        boolean encontrado = false;
+        
+        try{
+            SQL_LOGIN = "SELECT * FROM usuario WHERE idUsuario="+id;
+            PS = CNX.getConection().prepareStatement(SQL_LOGIN);
+            RS = PS.executeQuery();
+            
+            while(RS.next()){
+                int aux = RS.getInt(1);
+                String contAux = RS.getString(4);
+
+                if(id == aux){
+                    if(contrasena.equals(contAux)){
+                        encontrado = true;
+                    }
+                }
+            }
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null,"Error al consultar la BD\n" +
+                                            e.getMessage(),"Error",0);
+        }finally{
+            PS = null;
+            RS = null;
+            CNX.close();
+        }
+        
+        return encontrado;
     }
 }

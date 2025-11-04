@@ -11,6 +11,9 @@ package pck_proyecto;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.*;
+import pck_guis.Frm_menuPrincipal;
+
+
 public class test_bd extends javax.swing.JFrame {
 
     /**
@@ -86,6 +89,7 @@ public class test_bd extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Txf_nombre_busqueda = new javax.swing.JTextField();
         btn_consultar2 = new javax.swing.JButton();
+        btn_atras = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -229,6 +233,16 @@ public class test_bd extends javax.swing.JFrame {
             }
         });
 
+        btn_atras.setBackground(new java.awt.Color(255, 0, 0));
+        btn_atras.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_atras.setForeground(new java.awt.Color(255, 255, 255));
+        btn_atras.setText("Atrás");
+        btn_atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_atrasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -247,7 +261,9 @@ public class test_bd extends javax.swing.JFrame {
                                     .addComponent(btn_consul_id))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_cancelar)
-                        .addGap(163, 163, 163))
+                        .addGap(41, 41, 41)
+                        .addComponent(btn_atras)
+                        .addGap(47, 47, 47))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -324,7 +340,9 @@ public class test_bd extends javax.swing.JFrame {
                             .addComponent(btn_consul_id)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(btn_cancelar)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_cancelar)
+                            .addComponent(btn_atras))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lb_resultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -365,7 +383,7 @@ public class test_bd extends javax.swing.JFrame {
         precio = Float.parseFloat(Txf_precio.getText());
         Producto product = new Producto(id_producto,nombre,sabor,precio);
         product.insertar_Producto();
-        display_productos(); 
+        display_productos();
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
@@ -446,6 +464,12 @@ public class test_bd extends javax.swing.JFrame {
         Producto prod = new Producto();
         prod.busqueda_nombre(nombre);
     }//GEN-LAST:event_btn_consultar2ActionPerformed
+
+    private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
+        Frm_menuPrincipal ventana = new Frm_menuPrincipal();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_atrasActionPerformed
     
     /**
      * @param args the command line arguments
@@ -489,6 +513,7 @@ public class test_bd extends javax.swing.JFrame {
     private javax.swing.JTextField Txf_nombre_busqueda;
     private javax.swing.JTextField Txf_precio;
     private javax.swing.JTextField Txf_sabor;
+    private javax.swing.JButton btn_atras;
     private javax.swing.JButton btn_borrar;
     private javax.swing.JButton btn_cancelar;
     private javax.swing.JToggleButton btn_consul_id;
