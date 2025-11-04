@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.*;
 import pck_guis.Frm_menuPrincipal;
-
-
 public class test_bd extends javax.swing.JFrame {
 
     /**
@@ -149,6 +147,11 @@ public class test_bd extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("nombre:");
+
+        jLabel3.setText("Sabor:");
+
+
         jLabel2.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
         jLabel2.setText("Nombre:");
 
@@ -156,6 +159,7 @@ public class test_bd extends javax.swing.JFrame {
         jLabel3.setText("Sabor:");
 
         jLabel4.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
+
         jLabel4.setText("Precio:");
 
         btn_guardar.setText("Guardar\n");
@@ -180,7 +184,11 @@ public class test_bd extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Tabla_datos_productos);
 
+
+        btn_consultar.setText("consultar base de datos");
+
         btn_consultar.setText("Consultar base de datos");
+
         btn_consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_consultarActionPerformed(evt);
@@ -205,10 +213,14 @@ public class test_bd extends javax.swing.JFrame {
         ta_avisos.setRows(5);
         jScrollPane2.setViewportView(ta_avisos);
 
+        lb_consult.setText("Consulta por ID: ");
+
+        btn_consul_id.setText("consultar");
         lb_consult.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
         lb_consult.setText("Consulta por ID: ");
 
         btn_consul_id.setText("Consultar");
+
         btn_consul_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_consul_idActionPerformed(evt);
@@ -223,6 +235,9 @@ public class test_bd extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Consulta por nombre:");
+
+        btn_consultar2.setText("consultar");
         jLabel1.setFont(new java.awt.Font("Comfortaa", 1, 12)); // NOI18N
         jLabel1.setText("Consulta por nombre:");
 
@@ -242,7 +257,6 @@ public class test_bd extends javax.swing.JFrame {
                 btn_atrasActionPerformed(evt);
             }
         });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -252,6 +266,26 @@ public class test_bd extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(144, 144, 144))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Txf_nombre_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                                .addComponent(btn_consultar2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(lb_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(12, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Txf_Id_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57)
+                                .addComponent(btn_consul_id))
+                            .addComponent(lb_consult))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_cancelar)
+                        .addGap(163, 163, 163))))
                             .addComponent(lb_consult)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Txf_Id_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -290,6 +324,7 @@ public class test_bd extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -340,6 +375,8 @@ public class test_bd extends javax.swing.JFrame {
                             .addComponent(btn_consul_id)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
+                        .addComponent(btn_cancelar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_cancelar)
                             .addComponent(btn_atras))))
@@ -353,6 +390,7 @@ public class test_bd extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Txf_nombre_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_consultar2))
+                        .addGap(0, 4, Short.MAX_VALUE)))
                         .addGap(0, 14, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -383,6 +421,7 @@ public class test_bd extends javax.swing.JFrame {
         precio = Float.parseFloat(Txf_precio.getText());
         Producto product = new Producto(id_producto,nombre,sabor,precio);
         product.insertar_Producto();
+        display_productos(); 
         display_productos();
     }//GEN-LAST:event_btn_guardarActionPerformed
 
