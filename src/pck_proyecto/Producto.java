@@ -164,10 +164,10 @@ public class Producto {
     public void busqueda_nombre(String nombre){
         Connection con = Conexion_bd.getConection();
         try{
-            String consulta = "SELECT * FROM productos WHERE nombre_producto = " + nombre;
+            String consulta = "SELECT * from productos WHERE nombreProducto='" + nombre+"'";
             PreparedStatement st;
             st = con.prepareStatement(consulta);
-            ResultSet resultado = st.executeQuery(consulta);
+            ResultSet resultado = st.executeQuery();
             if(resultado.next()){
             JOptionPane.showMessageDialog(null,"ID: " +resultado.getInt(1) + " ,Nombre: " + resultado.getString(2) + 
                                           " ,Sabor: " + resultado.getString(3) + " ,Precio: " + resultado.getFloat(4),"Resultado",-1);
