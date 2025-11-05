@@ -34,16 +34,13 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
 
         private void evaluarID() {
             String texto = ctID.getText().trim();
-            if (texto.matches("[0-9]+")) {
-                if(ctID.getText().equals("123")){
-                lbEncontrado.setText("ID Encontrado ");
+            if (texto.matches("\\d+")) {
+                ctEncontrado.setText("ID Encontrado ");
                 ctNombre.setText("");
                 ctPuesto.setText("");
                 ctSueldo.setText("");
                 ctHorario.setText("");
-                }
             } else {
-                lbEncontrado.setText("ID no valido");
                 ctNombre.setText("");
                 ctPuesto.setText("");
                 ctSueldo.setText("");
@@ -80,7 +77,7 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         btEliminar = new javax.swing.JButton();
         btCancelar = new javax.swing.JButton();
-        lbEncontrado = new javax.swing.JLabel();
+        ctEncontrado = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(730, 530));
@@ -121,11 +118,6 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
 
         ctID.setForeground(new java.awt.Color(196, 196, 196));
         ctID.setText("ID");
-        ctID.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ctIDMouseClicked(evt);
-            }
-        });
         ctID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ctIDActionPerformed(evt);
@@ -194,8 +186,14 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
             }
         });
 
-        lbEncontrado.setForeground(new java.awt.Color(204, 204, 204));
-        lbEncontrado.setText("                 ");
+        ctEncontrado.setBackground(new java.awt.Color(204, 204, 204));
+        ctEncontrado.setText("Enter");
+        ctEncontrado.setEnabled(false);
+        ctEncontrado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ctEncontradoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -208,10 +206,9 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
                         .addGap(195, 195, 195)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(ctID, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbEncontrado, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))))
+                            .addComponent(ctID, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ctEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,7 +235,7 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ctID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbEncontrado))
+                    .addComponent(ctEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -261,7 +258,7 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btEliminar)
                     .addComponent(btCancelar))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -286,7 +283,7 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(87, Short.MAX_VALUE))
         );
 
@@ -318,9 +315,9 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ctIDActionPerformed
 
-    private void ctIDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ctIDMouseClicked
-        ctID.setText("");
-    }//GEN-LAST:event_ctIDMouseClicked
+    private void ctEncontradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ctEncontradoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ctEncontradoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -360,6 +357,7 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCancelar;
     private javax.swing.JButton btEliminar;
+    private javax.swing.JTextField ctEncontrado;
     private javax.swing.JTextField ctHorario;
     private javax.swing.JTextField ctID;
     private javax.swing.JTextField ctNombre;
@@ -376,6 +374,5 @@ public class frm_EliminarUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JLabel lbEncontrado;
     // End of variables declaration//GEN-END:variables
 }

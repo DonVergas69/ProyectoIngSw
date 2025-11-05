@@ -4,71 +4,18 @@
  */
 package pck_guis;
 
-import javax.swing.JOptionPane;
-import pck_modelo.Usuario_DB;
-
 /**
  *
  * @author lenovo
  */
 public class Frm_login extends javax.swing.JFrame {
-    private final Usuario_DB UDB;
+
     /**
      * Creates new form Frm_altaUsuario
      */
     public Frm_login() {
         initComponents();
-        UDB = new Usuario_DB();
         this.setLocationRelativeTo(null);
-    }
-    
-    private void login(){
-        int id = 0;
-        String contrasena = null;
-        boolean valido = true;
-        boolean encontrado = false;
-        
-        try{
-            id = Integer.parseInt(ct_idUsuario.getText());
-        }catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(null,"El ID debe ser numerico.","Error de entrada",2);
-            valido = false;
-            ct_idUsuario.setText("");
-            ct_idUsuario.requestFocus();
-        }
-        
-        if(id <= 0){
-            JOptionPane.showMessageDialog(null,"El ID debe ser positivo","Error de entrada",2);
-            valido = false;
-            ct_idUsuario.setText("");
-            ct_idUsuario.requestFocus();
-        }
-        
-        contrasena = ct_contrasena.getText();
-        
-        if(!contrasena.matches("^[a-zA-Z0-9]+$")){
-            JOptionPane.showMessageDialog(null,"La contraseña no admite caracteres especiales ni vacíos.","Error de entrada",2);
-            ct_contrasena.setText("");
-            ct_contrasena.requestFocus();
-            valido = false;
-        }
-        
-        if(valido){
-            encontrado = UDB.iniciarSesion(id, contrasena);
-            if(encontrado){
-                Frm_menuPrincipal ventana = new Frm_menuPrincipal();
-                ventana.setVisible(true);
-                this.dispose();
-            }else{
-                JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecto(s).","Error",2);
-                limpiar();
-            }
-        }
-    }
-    
-    private void limpiar(){
-        ct_idUsuario.setText("");
-        ct_contrasena.setText("");
     }
 
     /**
@@ -111,9 +58,9 @@ public class Frm_login extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(208, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(232, 232, 232))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(180, 180, 180))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,11 +93,6 @@ public class Frm_login extends javax.swing.JFrame {
         jLabel6.setPreferredSize(new java.awt.Dimension(40, 40));
 
         btn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pck_icons/icon_login.png"))); // NOI18N
-        btn_login.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_loginActionPerformed(evt);
-            }
-        });
 
         jLabel8.setFont(new java.awt.Font("Comfortaa", 0, 14)); // NOI18N
         jLabel8.setText("Entrar");
@@ -263,12 +205,10 @@ public class Frm_login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        Frm_menuPrincipal ventana = new Frm_menuPrincipal();
+        ventana.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_salirActionPerformed
-
-    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        login();
-    }//GEN-LAST:event_btn_loginActionPerformed
 
     /**
      * @param args the command line arguments
